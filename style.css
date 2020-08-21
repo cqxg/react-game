@@ -9,3 +9,21 @@ main {
     background: url('./assets/dark_wall.webp') repeat;
     font-family: sans-serif;
 }
+
+.score {
+    color: rgb(224,224,224);
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score h2 {
+    font-size: 20px;
+}
+
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
