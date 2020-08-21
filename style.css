@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main {
     height: 100vh;
     background: url('./assets/dark_wall.webp') repeat;
