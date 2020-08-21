@@ -1,0 +1,5 @@
+main {
+    height: 100vh;
+    background: url('./assets/dark_wall.webp') repeat;
+    font-family: sans-serif;
+}
