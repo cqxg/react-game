@@ -10,7 +10,15 @@ const app = () => {
 
     const computerOptions = ['rock', 'paper', 'scissors'];
 
-    console.log('qq')
+    let playerScore = 0;
+    let computerScore = 0;
+
+    const startGame = () => {
+        introScreen.classList.add('fadeOut');
+        match.classList.add('fadeIn');
+    };
+
+    playBtn.addEventListener('click', startGame)
 };
 
 document.addEventListener('DOMContentLoaded', app);
