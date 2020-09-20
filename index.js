@@ -13,6 +13,54 @@ const app = () => {
     let playerScore = 0;
     let computerScore = 0;
 
+    const updateScore = () => {
+        pScore.textContent = playerScore;
+        cScore.textContent = computerScore;
+    };
+
+    const compareHands = (playerChoice, computerChoice) => {
+
+        const winner = document.querySelector('.winner');
+
+        if (playerChoice === 'rock') {
+            if (computerChoice === 'scissors') {
+                winner.textContent = 'Player win!'
+            } else if (computerChoice === 'paper') {
+                winner.textContent = 'Computer win!'
+            } else if (computerChoice === 'rock') {
+                winner.textContent = 'Draw game :('
+            }
+        }
+
+        if (playerChoice === 'scissors') {
+            if (computerChoice === 'rock') {
+                winner.textContent = 'Computer win!';
+            } else if (computerChoice === 'paper') {
+                winner.textContent = 'Player win!';
+            } else if (computerChoice === 'scissors') {
+                winner.textContent = 'Draw game :('
+            }
+        }
+
+        if (playerChoice === 'paper') {
+            if (computerChoice === 'rock') {
+                winner.textContent = 'Player win!';
+            } else if (computerChoice === 'paper') {
+                winner.textContent = 'Draw game :('
+            } else if (computerChoice === 'scissors') {
+                winner.textContent = 'Computer win!';
+            }
+        }
+
+        if (winner.textContent === 'Player win!') {
+            playerScore++;
+        } else if (winner.textContent === 'Computer win!') {
+            computerScore++;
+        }
+
+        updateScore();
+    };
+
     const startGame = () => {
         introScreen.classList.add('fadeOut');
         match.classList.add('fadeIn');
@@ -26,18 +74,15 @@ const app = () => {
         computerHand.src = `./assets/rock.png`;
 
         setTimeout(() => {
+            compareHands(this.className, computerChoise);
+            
             playerHand.src = `./assets/${this.className}.png`;
             computerHand.src = `./assets/${computerChoise}.png`;
-        }, 2000)
+        }, 2000);
 
         playerHand.style.animation = 'shakePlayer 2s ease';
         computerHand.style.animation = 'shakeComputer 2s ease';
     };
-
-    const updateScore = () => {
-        pScore.textContent = playerScore;
-        cScore.textContent = computerScore;
-    }
 
     options.addEventListener('click', playMatch);
     playBtn.addEventListener('click', startGame);
