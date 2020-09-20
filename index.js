@@ -6,7 +6,7 @@ const app = () => {
     const cScore = document.querySelector('.computer-score p');
     const playerHand = document.querySelector('.player-hand');
     const computerHand = document.querySelector('.computer-hand');
-    const options = document.querySelectorAll('.options button');
+    const options = document.querySelector('.options button');
 
     const computerOptions = ['rock', 'paper', 'scissors'];
 
@@ -18,7 +18,24 @@ const app = () => {
         match.classList.add('fadeIn');
     };
 
-    playBtn.addEventListener('click', startGame)
+    const playMatch = () => {
+        const computerNumber = Math.floor(Math.random() * 3);
+        const computerChoise = computerOptions[computerNumber];
+
+        playerHand.src = `./assets/rock.png`;
+        computerHand.src = `./assets/rock.png`;
+
+        setTimeout(() => {
+            playerHand.src = `./assets/${this.className}.png`;
+            computerHand.src = `./assets/${computerChoise}.png`;
+        }, 2000)
+
+        playerHand.style.animation = 'shakePlayer 2s ease';
+        computerHand.style.animation = 'shakeComputer 2s ease';
+    };
+
+    options.addEventListener('click', playMatch);
+    playBtn.addEventListener('click', startGame);
 };
 
 document.addEventListener('DOMContentLoaded', app);
