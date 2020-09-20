@@ -34,6 +34,11 @@ const app = () => {
         computerHand.style.animation = 'shakeComputer 2s ease';
     };
 
+    const updateScore = () => {
+        pScore.textContent = playerScore;
+        cScore.textContent = computerScore;
+    }
+
     options.addEventListener('click', playMatch);
     playBtn.addEventListener('click', startGame);
 };
