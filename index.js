@@ -4,9 +4,6 @@ const app = () => {
     const playBtn = document.querySelector('.intro button');
     const pScore = document.querySelector('.player-score p');
     const cScore = document.querySelector('.computer-score p');
-    const playerHand = document.querySelector('.player-hand');
-    const computerHand = document.querySelector('.computer-hand');
-    const options = document.querySelector('.options button');
 
     const computerOptions = ['rock', 'paper', 'scissors'];
 
@@ -30,7 +27,7 @@ const app = () => {
             } else if (computerChoice === 'rock') {
                 winner.textContent = 'Draw game :('
             }
-        }
+        };
 
         if (playerChoice === 'scissors') {
             if (computerChoice === 'rock') {
@@ -40,7 +37,7 @@ const app = () => {
             } else if (computerChoice === 'scissors') {
                 winner.textContent = 'Draw game :('
             }
-        }
+        };
 
         if (playerChoice === 'paper') {
             if (computerChoice === 'rock') {
@@ -50,15 +47,45 @@ const app = () => {
             } else if (computerChoice === 'scissors') {
                 winner.textContent = 'Computer win!';
             }
-        }
+        };
 
         if (winner.textContent === 'Player win!') {
             playerScore++;
         } else if (winner.textContent === 'Computer win!') {
             computerScore++;
-        }
+        };
 
         updateScore();
+    };
+
+    const playMatch = () => {
+        const hands = document.querySelectorAll('.hands img');
+        const playerHand = document.querySelector('.player-hand');
+        const options = document.querySelectorAll('.options button');
+        const computerHand = document.querySelector('.computer-hand');
+
+        hands.forEach(hand => hand.addEventListener('animationend', function () { this.style.animation = '' }));
+
+        options.forEach(option => {
+            option.addEventListener('click', function () {
+                const computerNumber = Math.floor(Math.random() * 3);
+                const computerChoise = computerOptions[computerNumber];
+
+                playerHand.src = `./assets/rock.png`;
+                computerHand.src = `./assets/rock.png`;
+
+                setTimeout(() => {
+                    compareHands(this.className, computerChoise);
+
+                    playerHand.src = `./assets/${this.className}.png`;
+                    computerHand.src = `./assets/${computerChoise}.png`;
+                }, 2000)
+
+                playerHand.style.animation = 'shakePlayer 2s ease';
+                computerHand.style.animation = 'shakeComputer 2s ease';
+
+            })
+        })
     };
 
     const startGame = () => {
@@ -66,25 +93,8 @@ const app = () => {
         match.classList.add('fadeIn');
     };
 
-    const playMatch = () => {
-        const computerNumber = Math.floor(Math.random() * 3);
-        const computerChoise = computerOptions[computerNumber];
+    playMatch();
 
-        playerHand.src = `./assets/rock.png`;
-        computerHand.src = `./assets/rock.png`;
-
-        setTimeout(() => {
-            compareHands(this.className, computerChoise);
-            
-            playerHand.src = `./assets/${this.className}.png`;
-            computerHand.src = `./assets/${computerChoise}.png`;
-        }, 2000);
-
-        playerHand.style.animation = 'shakePlayer 2s ease';
-        computerHand.style.animation = 'shakeComputer 2s ease';
-    };
-
-    options.addEventListener('click', playMatch);
     playBtn.addEventListener('click', startGame);
 };
 
