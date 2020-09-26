@@ -92,6 +92,11 @@ div.fadeIn {
     pointer-events: all;
 }
 
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
 @keyframes shakePlayer {
     0%{
         transform: rotateY(180deg) translateY(0px);

@@ -4,11 +4,17 @@ const app = () => {
     const playBtn = document.querySelector('.intro button');
     const pScore = document.querySelector('.player-score p');
     const cScore = document.querySelector('.computer-score p');
+    const optionsWrapper = document.querySelector('.options-wrapper');
 
     const computerOptions = ['rock', 'paper', 'scissors'];
 
     let playerScore = 0;
     let computerScore = 0;
+
+    const startGame = () => {
+        introScreen.classList.add('fadeOut');
+        match.classList.add('fadeIn');
+    };
 
     const updateScore = () => {
         pScore.textContent = playerScore;
@@ -68,6 +74,7 @@ const app = () => {
 
         options.forEach(option => {
             option.addEventListener('click', function () {
+                optionsWrapper.classList.add('disabled');
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoise = computerOptions[computerNumber];
 
@@ -79,18 +86,15 @@ const app = () => {
 
                     playerHand.src = `./assets/${this.className}.png`;
                     computerHand.src = `./assets/${computerChoise}.png`;
-                }, 2000)
+
+                    optionsWrapper.classList.remove('disabled');
+                }, 2000);
 
                 playerHand.style.animation = 'shakePlayer 2s ease';
                 computerHand.style.animation = 'shakeComputer 2s ease';
 
             })
         })
-    };
-
-    const startGame = () => {
-        introScreen.classList.add('fadeOut');
-        match.classList.add('fadeIn');
     };
 
     playMatch();
