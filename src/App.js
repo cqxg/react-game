@@ -1,5 +1,5 @@
 const App = () => {
-  return <span>React Game</span>;
+  return <Main />;
 };
 
 export default App;
