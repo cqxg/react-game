@@ -1,0 +1,26 @@
+.intro {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(224, 224, 224);
+  justify-content: space-around;
+  transition: opacity 0.1s ease 0.1s;
+}
+
+.intro h1 {
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+.intro button {
+  width: 150px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border-radius: 3px;
+  color: rgb(224, 224, 224);
+  background-color: rgb(45, 117, 96);
+}
