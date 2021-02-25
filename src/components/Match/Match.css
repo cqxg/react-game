@@ -1,0 +1,29 @@
+.match {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.9s ease 0.5s;
+}
+
+.match button {
+  width: 150px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border-radius: 3px;
+  color: rgb(224, 224, 224);
+  background-color: rgb(45, 117, 96);
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
