@@ -1,0 +1,10 @@
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
