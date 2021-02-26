@@ -4,9 +4,9 @@ import './Hands.css';
 
 const Hands = () => {
   return (
-    <div class="hands">
-      <img class="player-hand" src={hand} />
-      <img class="computer-hand" src={hand} />
+    <div className="hands">
+      <img alt="player-hand" className="player-hand" src={hand} />
+      <img alt="computer-hand" className="computer-hand" src={hand} />
     </div>
   );
 };

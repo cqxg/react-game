@@ -2,13 +2,13 @@ import './Score.css';
 
 const Score = () => {
     return (
-        <div class="score">
-            <div class="player-score">
+        <div className="score">
+            <div className="player-score">
                 <h2>Player</h2>
                 <p>0</p>
             </div>
 
-            <div class="computer-score">
+            <div className="computer-score">
                 <h2>Computer</h2>
                 <p>0</p>
             </div>

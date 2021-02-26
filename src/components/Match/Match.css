@@ -24,13 +24,3 @@
   font-size: 30px;
   padding-top: 15px;
 }
-
-div.fadeOut {
-  opacity: 0;
-  pointer-events: none;
-}
-
-div.fadeIn {
-  opacity: 1;
-  pointer-events: all;
-}

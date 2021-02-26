@@ -24,3 +24,13 @@
   color: rgb(224, 224, 224);
   background-color: rgb(45, 117, 96);
 }
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
