@@ -2,11 +2,22 @@ import hand from '../../../assets/rock.png';
 
 import './Hands.css';
 
-const Hands = () => {
+const Hands = ({ playerHand, computerHand }) => {
+
   return (
     <div className="hands">
-      <img alt="player-hand" className="player-hand" src={hand} />
-      <img alt="computer-hand" className="computer-hand" src={hand} />
+      <img
+        src={hand}
+        ref={playerHand}
+        alt="player-hand"
+        className="player-hand"
+      />
+      <img
+        src={hand}
+        ref={computerHand}
+        alt="computer-hand"
+        className="computer-hand"
+      />
     </div>
   );
 };
