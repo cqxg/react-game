@@ -1,6 +1,6 @@
 import hand from '../../../assets/rock.png';
 
-import './Hands.css';
+import './Hands.scss';
 
 const Hands = ({ playerHand, computerHand }) => {
 

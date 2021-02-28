@@ -1,4 +1,4 @@
-import './Intro.css';
+import './Intro.scss';
 
 const Intro = ({ introRef, matchRef }) => {
   const startGame = () => {
@@ -8,7 +8,7 @@ const Intro = ({ introRef, matchRef }) => {
 
   return (
     <div ref={introRef} className="intro">
-      <h1>Rock, scissors, paper</h1>
+      <h1>Rock - Scissors - Paper</h1>
       <button onClick={startGame}>Play!</button>
     </div>
   );

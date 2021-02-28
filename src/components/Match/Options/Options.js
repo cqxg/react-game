@@ -2,7 +2,7 @@ import rock from '../../../assets/rock.png';
 import paper from '../../../assets/paper.png';
 import scissors from '../../../assets/scissors.png';
 
-import './Options.css';
+import './Options.scss';
 
 const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOptions, compareHands }) => {
 
@@ -61,10 +61,10 @@ const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOp
           Rock
         </button>
         <button onClick={(e) => play(e)} ref={options} className="scissors">
-          scissors
+          Scissors
         </button>
         <button onClick={(e) => play(e)} ref={options} className="paper">
-          paper
+          Paper
         </button>
       </div>
     </div>

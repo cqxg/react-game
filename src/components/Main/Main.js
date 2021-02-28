@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Intro from '../Intro/Intro';
 import Match from '../Match/Match';
 
-import './Main.css';
+import './Main.scss';
 
 const Main = () => {
   const options = useRef(null);
@@ -14,7 +14,7 @@ const Main = () => {
   const optionsWrapper = useRef(null);
 
   return (
-    <div className='main'>
+    <main>
       <Intro introRef={introRef} matchRef={matchRef} />
       <Match
         options={options}
@@ -23,7 +23,7 @@ const Main = () => {
         computerHand={computerHand}
         optionsWrapper={optionsWrapper}
       />
-    </div>
+    </main>
   );
 };
 

@@ -1,11 +1,11 @@
 .hands {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-}
+  justify-content: space-around;
 
-.player-hand {
-  transform: rotateY(180deg);
+  .player-hand {
+    transform: rotateY(180deg);
+  }
 }
 
 @keyframes shakePlayer {

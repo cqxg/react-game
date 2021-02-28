@@ -5,7 +5,7 @@ import Score from '../Score/Score';
 import Hands from './Hands/Hands';
 import Options from './Options/Options';
 
-import './Match.css';
+import './Match.scss';
 
 const Match = ({
   options,
