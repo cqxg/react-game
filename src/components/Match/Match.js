@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 import Hands from './Hands/Hands';
 import Options from './Options/Options';
@@ -9,49 +9,69 @@ const Match = ({
   options,
   matchRef,
   playerHand,
+  updateScore,
   computerHand,
   optionsWrapper,
   computerOptions,
 }) => {
-  useEffect(() => {
-    const playMatch = () => {
-      // console.log(options.current.children);
+  let playerPoints = 0;
+  let computerPoints = 0;
 
+  const winner = useRef(null);
 
-      // options?.current?.children?.forEach(option => {
-      //   console.log(option);
-      // });
+  const compareHands = (playerChoice, computerChoice) => {
 
-
-      // playerHand.current.animationend((this.animation = ''));
-      // computerHand.current.animationend((this.animation = ''));
-      // options.forEach((option) => {
-      //   option.addEventListener('click', function () {
-      //     optionsWrapper.current.classList.add('disabled');
-      //     const computerNumber = Math.floor(Math.random() * 3);
-      //     const computerChoise = computerOptions[computerNumber];
-      //     playerHand.src = `./assets/rock.png`;
-      //     computerHand.src = `./assets/rock.png`;
-      //     setTimeout(() => {
-      //       //   compareHands(this.className, computerChoise);
-      //       playerHand.src = `./assets/${this.className}.png`;
-      //       computerHand.src = `./assets/${computerChoise}.png`;
-      //       optionsWrapper.classList.remove('disabled');
-      //     }, 2000);
-      //     playerHand.style.animation = 'shakePlayer 2s ease';
-      //     computerHand.style.animation = 'shakeComputer 2s ease';
-      //   });
-      // });
+    if (playerChoice === 'rock') {
+      if (computerChoice === 'scissors') {
+        winner.current.textContent = 'Player win!'
+      } else if (computerChoice === 'paper') {
+        winner.current.textContent = 'Computer win!'
+      } else if (computerChoice === 'rock') {
+        winner.current.textContent = 'Draw game :('
+      }
     };
 
-    playMatch();
-  }, []);
+    if (playerChoice === 'scissors') {
+      if (computerChoice === 'rock') {
+        winner.current.textContent = 'Computer win!';
+      } else if (computerChoice === 'paper') {
+        winner.current.textContent = 'Player win!';
+      } else if (computerChoice === 'scissors') {
+        winner.current.textContent = 'Draw game :('
+      }
+    };
+
+    if (playerChoice === 'paper') {
+      if (computerChoice === 'rock') {
+        winner.current.textContent = 'Player win!';
+      } else if (computerChoice === 'paper') {
+        winner.current.textContent = 'Draw game :('
+      } else if (computerChoice === 'scissors') {
+        winner.current.textContent = 'Computer win!';
+      }
+    };
+
+    if (winner.current.textContent === 'Player win!') {
+      playerPoints++;
+    } else if (winner.current.textContent === 'Computer win!') {
+      computerPoints++;
+    };
+
+    updateScore(playerPoints, computerPoints);
+  };
+
 
   return (
     <div ref={matchRef} className="match fadeOut">
-      <h2 className="winner">Choose a tool</h2>
+      <h2 ref={winner} className="winner">Choose a tool</h2>
       <Hands playerHand={playerHand} computerHand={computerHand} />
-      <Options optionsWrapper={optionsWrapper} options={options} playerHand={playerHand} computerHand={computerHand} computerOptions={computerOptions} />
+      <Options
+        options={options}
+        playerHand={playerHand}
+        compareHands={compareHands}
+        computerHand={computerHand}
+        optionsWrapper={optionsWrapper}
+        computerOptions={computerOptions} />
     </div>
   );
 };

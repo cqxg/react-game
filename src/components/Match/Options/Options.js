@@ -4,7 +4,7 @@ import scissors from '../../../assets/scissors.png';
 
 import './Options.css';
 
-const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOptions }) => {
+const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOptions, compareHands }) => {
 
   const play = (e) => {
     const computerNumber = Math.floor(Math.random() * 3);
@@ -15,6 +15,8 @@ const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOp
     optionsWrapper.current.classList.add('disabled');
 
     setTimeout(() => {
+      compareHands(e.target.className, computerChoise);
+
       switch (computerChoise) {
         case 'rock':
           computerHand.current.src = rock;
