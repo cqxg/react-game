@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 
+import Score from '../Score/Score';
+
 import Hands from './Hands/Hands';
 import Options from './Options/Options';
 
@@ -9,15 +11,22 @@ const Match = ({
   options,
   matchRef,
   playerHand,
-  updateScore,
   computerHand,
   optionsWrapper,
-  computerOptions,
 }) => {
   let playerPoints = 0;
   let computerPoints = 0;
 
   const winner = useRef(null);
+  const playerScoreRef = useRef(null);
+  const computerScoreRef = useRef(null);
+
+  const computerOptions = ['rock', 'paper', 'scissors'];
+
+  const updateScore = () => {
+    playerScoreRef.current.textContent = playerPoints;
+    computerScoreRef.current.textContent = computerPoints;
+  };
 
   const compareHands = (playerChoice, computerChoice) => {
 
@@ -63,13 +72,14 @@ const Match = ({
 
   return (
     <div ref={matchRef} className="match fadeOut">
+      <Score playerScoreRef={playerScoreRef} computerScoreRef={computerScoreRef} />
       <h2 ref={winner} className="winner">Choose a tool</h2>
       <Hands playerHand={playerHand} computerHand={computerHand} />
       <Options
         options={options}
         playerHand={playerHand}
-        compareHands={compareHands}
         computerHand={computerHand}
+        compareHands={compareHands}
         optionsWrapper={optionsWrapper}
         computerOptions={computerOptions} />
     </div>
