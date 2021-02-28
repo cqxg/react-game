@@ -15,12 +15,16 @@ const Match = ({
 }) => {
   useEffect(() => {
     const playMatch = () => {
-      console.log(playerHand.current.style);
-        console.log(computerHand.current);
-        playerHand.current.style.animation = '';
-        computerHand.current.style.animation = '';
-        // playerHand.current.animationend((this.animation = ''));
-        // computerHand.current.animationend((this.animation = ''));
+      // console.log(options.current.children);
+
+
+      // options?.current?.children?.forEach(option => {
+      //   console.log(option);
+      // });
+
+
+      // playerHand.current.animationend((this.animation = ''));
+      // computerHand.current.animationend((this.animation = ''));
       // options.forEach((option) => {
       //   option.addEventListener('click', function () {
       //     optionsWrapper.current.classList.add('disabled');
@@ -47,7 +51,7 @@ const Match = ({
     <div ref={matchRef} className="match fadeOut">
       <h2 className="winner">Choose a tool</h2>
       <Hands playerHand={playerHand} computerHand={computerHand} />
-      <Options options={options} />
+      <Options optionsWrapper={optionsWrapper} options={options} playerHand={playerHand} computerHand={computerHand} computerOptions={computerOptions} />
     </div>
   );
 };
