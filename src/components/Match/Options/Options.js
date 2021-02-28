@@ -1,5 +1,5 @@
-import paper from '../../../assets/paper.png';
 import rock from '../../../assets/rock.png';
+import paper from '../../../assets/paper.png';
 import scissors from '../../../assets/scissors.png';
 
 import './Options.css';
@@ -7,13 +7,12 @@ import './Options.css';
 const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOptions }) => {
 
   const play = (e) => {
-    optionsWrapper.current.classList.add('disabled');
-
     const computerNumber = Math.floor(Math.random() * 3);
     const computerChoise = computerOptions[computerNumber];
 
     playerHand.current.src = rock;
     computerHand.current.src = rock;
+    optionsWrapper.current.classList.add('disabled');
 
     setTimeout(() => {
       switch (computerChoise) {
@@ -30,7 +29,7 @@ const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOp
           break
       }
 
-      switch (computerChoise) {
+      switch (e.target.className) {
         case 'rock':
           playerHand.current.src = rock;
           break
@@ -44,6 +43,8 @@ const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOp
           break
       }
 
+      playerHand.current.style.animation = '';
+      computerHand.current.style.animation = '';
       optionsWrapper.current.classList.remove('disabled');
     }, 2000);
 
