@@ -1,19 +1,25 @@
+import useSound from 'use-sound';
+
 import rock from '../../../../../assets/rock.png';
 import paper from '../../../../../assets/paper.png';
 import scissors from '../../../../../assets/scissors.png';
+import boop from '../../../../../assets/pomoyka.mp3';
 
 import './Options.scss';
 
 const Options = ({
   options,
-  optionsWrapper,
   playerHand,
-  computerHand,
-  computerOptions,
-  compareHands,
   gamesCount,
+  compareHands,
+  computerHand,
+  optionsWrapper,
+  computerOptions,
 }) => {
-  const play = (e) => {
+  const [play] = useSound(boop);
+
+  const goPlay = (e) => {
+    play();
     gamesCount++;
     const computerNumber = Math.floor(Math.random() * 3);
     const computerChoise = computerOptions[computerNumber];
@@ -65,13 +71,13 @@ const Options = ({
   return (
     <div ref={optionsWrapper} className="options-wrapper">
       <div ref={options} className="options">
-        <button onClick={(e) => play(e)} ref={options} className="rock">
+        <button onClick={(e) => goPlay(e)} ref={options} className="rock">
           Rock
         </button>
-        <button onClick={(e) => play(e)} ref={options} className="scissors">
+        <button onClick={(e) => goPlay(e)} ref={options} className="scissors">
           Scissors
         </button>
-        <button onClick={(e) => play(e)} ref={options} className="paper">
+        <button onClick={(e) => goPlay(e)} ref={options} className="paper">
           Paper
         </button>
       </div>

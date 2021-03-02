@@ -1,0 +1,18 @@
+.settings__panel {
+    background: #fff;
+    border-radius: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 2%;
+    padding: 0 25px;
+    left: 2%;
+    box-shadow: 2px 2px 10px 5px rgba(192, 192, 192, 0.596);
+}
+
+.volume {
+    width: 50px;
+    height: 30px;
+}
