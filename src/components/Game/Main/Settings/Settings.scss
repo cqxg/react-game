@@ -1,10 +1,9 @@
 .settings__panel {
   top: 2%;
   left: 2%;
-  height: 50px;
   width: 145px;
   display: flex;
-  padding: 0 25px;
+  padding: 5px 25px;
   font-size: 20px;
   position: absolute;
   border-radius: 15px;
@@ -20,6 +19,11 @@
     color: #000;
     text-decoration: none;
   }
+
+  img {
+    height: 30px;
+  }
+
 }
 
 .volume {

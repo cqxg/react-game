@@ -1,12 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 
-import Game from './Pages/Game/Game';
-import Statistics from './Pages/Statistics/Statistics';
-import SettingsPanel from './Pages/Game/Header/SettingsPanel/SettingsPanel';
+import Game from './components/Game/Game';
+import Statistics from './components/Statistics/Statistics';
+import Settings from './components/Game/Main/Settings/Settings';
 
 const App = () => (
   <>
-    <SettingsPanel />
+    <Settings />
     <Switch>
       <Route path="/" exact component={Game} />
       <Route path="/statistics" exact component={Statistics} />

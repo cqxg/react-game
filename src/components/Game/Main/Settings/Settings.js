@@ -1,17 +1,16 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import { useEffect, useRef, useState } from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import { Link, withRouter } from 'react-router-dom';
 import { useHotkeys } from 'react-hotkeys-hook';
 
-import phoneSound from '../../../../assets/phonemusic.mp3';
 import volume from '../../../../assets/volume.png';
+import backgroundMusic from '../../../../assets/phonemusic.mp3';
 
-import './settingsPanel.scss';
+import './Settings.scss';
 
-const step = 0.1;
 const min = 0;
 const max = 100;
+const step = 0.1;
 
 const Volume = () => {
   const phoneMusic = useRef(null);
@@ -21,7 +20,7 @@ const Volume = () => {
     volume: [50],
   });
 
-  useHotkeys('m', () => setState({ ...state, volume: [0] }));
+  useHotkeys('-', () => setState({ ...state, volume: [0] }));
 
   useEffect(() => {
     const e = state.volume[0];
@@ -103,9 +102,9 @@ const Volume = () => {
       {state.toggled ? (
         RenderRange()
       ) : (
-        <img width="30px" src={volume} alt="volume-icon" />
-      )}
-      <audio loop ref={phoneMusic} src={phoneSound} />
+          <img width="30px" src={volume} alt="volume-icon" />
+        )}
+      <audio loop ref={phoneMusic} src={backgroundMusic} />
     </div>
   );
 };
