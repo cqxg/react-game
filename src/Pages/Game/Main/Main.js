@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import Intro from '../Intro/Intro';
-import Match from '../Match/Match';
+import Intro from './Intro/Intro';
+import Match from './Match/Match';
 
 import './Main.scss';
 

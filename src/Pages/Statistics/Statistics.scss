@@ -1,0 +1,32 @@
+.statistic {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+table {
+  overflow: auto;
+  & thead {
+    th {
+      border: 1px solid #fff;
+      padding: 15px;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgb(15, 15, 15);
+      background-color: lightskyblue;
+    }
+  }
+  & tbody {
+    & tr {
+      & td {
+        border: 1px solid #fff;
+        padding: 15px;
+        color: #333;
+        font-weight: 600;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+  }
+}

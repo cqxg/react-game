@@ -1,12 +1,20 @@
-import rock from '../../../assets/rock.png';
-import paper from '../../../assets/paper.png';
-import scissors from '../../../assets/scissors.png';
+import rock from '../../../../../assets/rock.png';
+import paper from '../../../../../assets/paper.png';
+import scissors from '../../../../../assets/scissors.png';
 
 import './Options.scss';
 
-const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOptions, compareHands }) => {
-
+const Options = ({
+  options,
+  optionsWrapper,
+  playerHand,
+  computerHand,
+  computerOptions,
+  compareHands,
+  gamesCount,
+}) => {
   const play = (e) => {
+    gamesCount++;
     const computerNumber = Math.floor(Math.random() * 3);
     const computerChoise = computerOptions[computerNumber];
 
@@ -20,29 +28,29 @@ const Options = ({ options, optionsWrapper, playerHand, computerHand, computerOp
       switch (computerChoise) {
         case 'rock':
           computerHand.current.src = rock;
-          break
+          break;
         case 'paper':
           computerHand.current.src = paper;
-          break
+          break;
         case 'scissors':
           computerHand.current.src = scissors;
-          break
+          break;
         default:
-          break
+          break;
       }
 
       switch (e.target.className) {
         case 'rock':
           playerHand.current.src = rock;
-          break
+          break;
         case 'paper':
           playerHand.current.src = paper;
-          break
+          break;
         case 'scissors':
           playerHand.current.src = scissors;
-          break
+          break;
         default:
-          break
+          break;
       }
 
       playerHand.current.style.animation = '';

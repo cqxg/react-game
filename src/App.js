@@ -1,15 +1,13 @@
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
+import { Route, Switch } from 'react-router-dom';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
-};
+import Game from './Pages/Game/Game';
+import Statistics from './Pages/Statistics/Statistics';
+
+const App = () => (
+  <Switch>
+    <Route path="/" exact component={Game} />
+    <Route path="/statistics" exact component={Statistics} />
+  </Switch>
+);
 
 export default App;

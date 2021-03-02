@@ -1,4 +1,4 @@
-import logo from '../../assets/rs_school_logo.svg';
+import logo from '../../../assets/rs_school_logo.svg';
 
 import './Footer.scss';
 
