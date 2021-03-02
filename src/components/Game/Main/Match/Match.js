@@ -7,6 +7,7 @@ import Options from './Options/Options';
 import './Match.scss';
 
 const Match = ({
+  t,
   options,
   matchRef,
   playerHand,
@@ -41,68 +42,99 @@ const Match = ({
   const compareHands = (playerChoice, computerChoice) => {
     if (playerChoice === 'rock') {
       if (computerChoice === 'scissors') {
-        winner.current.textContent = 'Player win!';
+        setState({
+          ...state,
+          winner: 'player',
+          gamesCount: state.gamesCount + 1,
+          playerPoints: state.playerPoints + 1,
+        });
+        winner.current.textContent = t('playerwin');
       } else if (computerChoice === 'paper') {
-        winner.current.textContent = 'Computer win!';
+        setState({
+          ...state,
+          winner: 'computer',
+          gamesCount: state.gamesCount + 1,
+          computerPoints: state.computerPoints + 1,
+        });
+        winner.current.textContent = t('computerwin');
       } else if (computerChoice === 'rock') {
-        winner.current.textContent = 'Draw game :(';
+        setState({
+          ...state,
+          winner: 'draw',
+          gamesCount: state.gamesCount + 1,
+        });
+        winner.current.textContent = t('draw');
       }
     }
 
     if (playerChoice === 'scissors') {
       if (computerChoice === 'rock') {
-        winner.current.textContent = 'Computer win!';
+        setState({
+          ...state,
+          winner: 'computer',
+          gamesCount: state.gamesCount + 1,
+          computerPoints: state.computerPoints + 1,
+        });
+        winner.current.textContent = t('computerwin')
       } else if (computerChoice === 'paper') {
-        winner.current.textContent = 'Player win!';
+        setState({
+          ...state,
+          winner: 'player',
+          gamesCount: state.gamesCount + 1,
+          playerPoints: state.playerPoints + 1,
+        });
+        winner.current.textContent = t('playerwin');
       } else if (computerChoice === 'scissors') {
-        winner.current.textContent = 'Draw game :(';
+        setState({
+          ...state,
+          winner: 'draw',
+          gamesCount: state.gamesCount + 1,
+        });
+        winner.current.textContent = t('draw');
       }
     }
 
     if (playerChoice === 'paper') {
       if (computerChoice === 'rock') {
-        winner.current.textContent = 'Player win!';
+        setState({
+          ...state,
+          winner: 'player',
+          gamesCount: state.gamesCount + 1,
+          playerPoints: state.playerPoints + 1,
+        });
+        winner.current.textContent = t('playerwin');
       } else if (computerChoice === 'paper') {
-        winner.current.textContent = 'Draw game :(';
+        setState({
+          ...state,
+          winner: 'draw',
+          gamesCount: state.gamesCount + 1,
+        });
+        winner.current.textContent = t('draw');
       } else if (computerChoice === 'scissors') {
-        winner.current.textContent = 'Computer win!';
+        setState({
+          ...state,
+          winner: 'computer',
+          gamesCount: state.gamesCount + 1,
+          computerPoints: state.computerPoints + 1,
+        });
+        winner.current.textContent = t('computerwin')
       }
-    }
-
-    if (winner.current.textContent === 'Player win!') {
-      setState({
-        ...state,
-        winner: 'player',
-        gamesCount: state.gamesCount + 1,
-        playerPoints: state.playerPoints + 1,
-      });
-    } else if (winner.current.textContent === 'Computer win!') {
-      setState({
-        ...state,
-        winner: 'computer',
-        gamesCount: state.gamesCount + 1,
-        computerPoints: state.computerPoints + 1,
-      });
-    } else if (winner.current.textContent === 'Draw game :(') {
-      setState({
-        ...state,
-        winner: 'draw',
-        gamesCount: state.gamesCount + 1,
-      });
     }
   };
 
   return (
     <div ref={matchRef} className="match fadeOut">
       <Score
+        t={t}
         playerPoints={state.playerPoints}
         computerPoints={state.computerPoints}
       />
       <h2 ref={winner} className="winner">
-        Choose a tool
+        {t('choosetool')}
       </h2>
       <Hands playerHand={playerHand} computerHand={computerHand} />
       <Options
+        t={t}
         options={options}
         playerHand={playerHand}
         computerHand={computerHand}

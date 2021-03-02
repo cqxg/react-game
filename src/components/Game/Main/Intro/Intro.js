@@ -1,6 +1,6 @@
 import './Intro.scss';
 
-const Intro = ({ introRef, matchRef }) => {
+const Intro = ({ t, introRef, matchRef }) => {
   const startGame = () => {
     introRef.current.classList.add('fadeOut');
     matchRef.current.classList.add('fadeIn');
@@ -8,8 +8,8 @@ const Intro = ({ introRef, matchRef }) => {
 
   return (
     <div ref={introRef} className="intro">
-      <h1>Rock - Scissors - Paper</h1>
-      <button onClick={startGame}>Play!</button>
+      <h1>{t('gamename')}</h1>
+      <button onClick={startGame}>{t('play')}</button>
     </div>
   );
 };

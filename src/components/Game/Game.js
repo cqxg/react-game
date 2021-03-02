@@ -1,10 +1,10 @@
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 
-const Game = () => {
+const Game = ({ t }) => {
   return (
     <>
-      <Main />
+      <Main t={t} />
       <Footer />
     </>
   );

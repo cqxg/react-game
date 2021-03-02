@@ -1,3 +1,20 @@
 export default {
-
+    statistics: 'статистика',
+    ingame: 'в игру',
+    gamename: 'Камень - Ножницы - Бумага',
+    play: 'Играть!',
+    choosetool: 'Выбери инструмент',
+    computerwin: 'Компьютер выиграл!',
+    playerwin: 'Вы выиграли!',
+    draw: 'Ничья!',
+    rock: 'Камень',
+    scissors: 'Ножницы',
+    paper: 'Бумага',
+    player: 'Игрок',
+    computer: 'Кмпьютер',
+    gamecount: 'Номер партии в текущей игровой сессии',
+    playercount: 'Ваши баллы в текущей игровой сессии',
+    computercount: 'Баллы компьютера в игровой сессии',
+    winner: 'Победитель в партии',
+    empty: 'Пусто...'
 }

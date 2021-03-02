@@ -1,6 +1,6 @@
 import './Statistics.scss';
 
-const Statistics = () => {
+const Statistics = ({ t }) => {
   const localStorageData = localStorage.getItem('stats');
   const data = localStorageData ? JSON.parse(localStorageData) : [];
 
@@ -10,10 +10,10 @@ const Statistics = () => {
         <table>
           <thead>
             <tr>
-              <th>Game Count</th>
-              <th>Player Points</th>
-              <th>Computer Points</th>
-              <th>Winner</th>
+              <th>{t('gamecount')}</th>
+              <th>{t('playercount')}</th>
+              <th>{t('computercount')}</th>
+              <th>{t('winner')}</th>
             </tr>
           </thead>
           <tbody>
@@ -30,8 +30,8 @@ const Statistics = () => {
           </tbody>
         </table>
       ) : (
-        <h1>Empty</h1>
-      )}
+          <h1>{t('empty')}</h1>
+        )}
     </div>
   );
 };

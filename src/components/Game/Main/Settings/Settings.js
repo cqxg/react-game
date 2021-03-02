@@ -17,7 +17,7 @@ const Volume = () => {
 
   const [state, setState] = useState({
     toggled: false,
-    volume: [50],
+    volume: [0],
   });
 
   useHotkeys('-', () => setState({ ...state, volume: [0] }));
@@ -31,20 +31,20 @@ const Volume = () => {
   const RenderRange = () => (
     <div>
       <Range
-        values={state.volume}
-        step={step}
-        min={min}
         max={max}
+        min={min}
+        step={step}
+        values={state.volume}
         onChange={(values) => setState({ ...state, volume: values })}
         renderTrack={({ props, children }) => (
           <div
-            onMouseDown={props.onMouseDown}
-            onTouchStart={props.onTouchStart}
             style={{
+              width: '100%',
               height: '36px',
               display: 'flex',
-              width: '100%',
             }}
+            onMouseDown={props.onMouseDown}
+            onTouchStart={props.onTouchStart}
           >
             <div
               ref={props.ref}
@@ -69,13 +69,13 @@ const Volume = () => {
           <div
             {...props}
             style={{
-              height: '15px',
               width: '15px',
-              borderRadius: '50%',
-              backgroundColor: '#FFF',
+              height: '15px',
               display: 'flex',
-              justifyContent: 'center',
+              borderRadius: '50%',
               alignItems: 'center',
+              backgroundColor: '#FFF',
+              justifyContent: 'center',
               boxShadow: '0px 2px 6px #AAA',
             }}
           >
@@ -109,17 +109,53 @@ const Volume = () => {
   );
 };
 
-const SettingsPanel = ({ location }) => {
+const Settings = ({ location, t, i18n, activeLocale, changeLocale }) => {
+
+  const setLanguage = (language) => {
+    i18n.changeLanguage(language);
+    changeLocale(language);
+  };
+
+  const RU = (
+    <span
+      className={
+        activeLocale === "ru"
+          ? "settings__language-container__ru active"
+          : "settings__language-container__ru"
+      }
+      onClick={() => setLanguage("ru")}
+    >
+      RU
+    </span>
+  );
+
+  const EN = (
+    <span
+      className={
+        activeLocale === "en"
+          ? "settings__language-container__en active"
+          : "settings__language-container__en"
+      }
+      onClick={() => setLanguage("en")}
+    >
+      EN
+    </span>
+  );
+
+
   const locationName =
-    location.pathname === '/statistics' ? 'Main page' : 'Statistic';
+    location.pathname === '/statistics' ?  t('ingame')  : t('statistics') ;
   const locationLink = location.pathname === '/statistics' ? '/' : 'statistics';
 
   return (
-    <div className="settings__panel">
+    <div className="settings">
       <Volume />
       <Link to={locationLink}>{locationName}</Link>
+      <div className='settings__language-container'>
+        {EN} {RU}
+      </div>
     </div>
   );
 };
 
-export default withRouter(SettingsPanel);
+export default withRouter(Settings);

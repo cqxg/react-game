@@ -5,7 +5,7 @@ import Match from './Match/Match';
 
 import './Main.scss';
 
-const Main = () => {
+const Main = ({ t }) => {
   const options = useRef(null);
   const introRef = useRef(null);
   const matchRef = useRef(null);
@@ -15,8 +15,9 @@ const Main = () => {
 
   return (
     <main>
-      <Intro introRef={introRef} matchRef={matchRef} />
+      <Intro t={t} introRef={introRef} matchRef={matchRef} />
       <Match
+        t={t}
         options={options}
         matchRef={matchRef}
         playerHand={playerHand}

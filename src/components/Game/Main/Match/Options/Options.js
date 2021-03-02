@@ -8,6 +8,7 @@ import boop from '../../../../../assets/pomoyka.mp3';
 import './Options.scss';
 
 const Options = ({
+  t,
   options,
   playerHand,
   gamesCount,
@@ -72,13 +73,13 @@ const Options = ({
     <div ref={optionsWrapper} className="options-wrapper">
       <div ref={options} className="options">
         <button onClick={(e) => goPlay(e)} ref={options} className="rock">
-          Rock
+          {t('rock')}
         </button>
         <button onClick={(e) => goPlay(e)} ref={options} className="scissors">
-          Scissors
+          {t('scissors')}
         </button>
         <button onClick={(e) => goPlay(e)} ref={options} className="paper">
-          Paper
+          {t('paper')}
         </button>
       </div>
     </div>

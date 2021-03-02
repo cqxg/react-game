@@ -1,7 +1,7 @@
-.settings__panel {
+.settings {
   top: 2%;
   left: 2%;
-  width: 145px;
+  width: 245px;
   display: flex;
   font-size: 20px;
   padding: 5px 25px;
@@ -24,9 +24,29 @@
     height: 30px;
   }
 
+  &__language-container {
+    display: flex;
+    font-size: 20px;
+    cursor: pointer;
+
+    &__en,
+    &__ru {
+      margin: 5px;
+      color: #837c9a;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
 }
 
 .volume {
   width: 50px;
   height: 30px;
+}
+
+
+.active {
+  color: #000;
 }
