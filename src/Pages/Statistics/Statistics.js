@@ -19,7 +19,6 @@ const Statistics = () => {
           <tbody>
             {data.map((item, index) => {
               return (
-                // eslint-disable-next-line react/no-array-index-key
                 <tr key={`${JSON.stringify(item)} ${index}`}>
                   <td>{item.gamesCount}</td>
                   <td>{item.playerPoints}</td>
