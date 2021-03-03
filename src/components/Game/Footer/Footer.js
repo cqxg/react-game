@@ -5,7 +5,7 @@ import './Footer.scss';
 const Footer = () => (
     <footer>
         <a href='https://github.com/cqxg' rel='noreferrer' target='_blank' >
-            <span>cqxg 2020</span>
+            <span>cqxg 2021</span>
         </a>
         <a href='https://rs.school/js/' rel='noreferrer' target='_blank' >
             <img alt='rss logo' src={logo} />

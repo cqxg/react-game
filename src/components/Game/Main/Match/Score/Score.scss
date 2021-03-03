@@ -1,8 +1,8 @@
 .score {
-  height: 20vh;
+  height: 250px;
   display: flex;
   align-items: center;
-  color: rgb(224, 224, 224);
+  color: rgb(220, 220, 220);
   justify-content: space-around;
 
   h2 {
@@ -16,7 +16,7 @@
     letter-spacing: 1px;
     border-radius: 15px;
     border: 3px solid black;
-    background-color: rgb(224, 224, 224);
+    background-color: white;
     box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.5);
   }
 

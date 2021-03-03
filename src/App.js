@@ -14,13 +14,18 @@ const App = () => {
 
   return (
     <>
-      <Settings t={t} i18n={i18n} changeLocale={changeLocale} activeLocale={activeLocale} />
+      <Settings
+        t={t}
+        i18n={i18n}
+        changeLocale={changeLocale}
+        activeLocale={activeLocale}
+      />
       <Switch>
         <Route path="/" exact render={() => <Game t={t} />} />
         <Route path="/statistics" render={() => <Statistics t={t} />} />
       </Switch>
     </>
-  )
-}
+  );
+};
 
 export default App;

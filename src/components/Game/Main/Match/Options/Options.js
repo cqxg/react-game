@@ -1,8 +1,8 @@
 import useSound from 'use-sound';
 
-import rock from '../../../../../assets/rock.png';
-import paper from '../../../../../assets/paper.png';
-import scissors from '../../../../../assets/scissors.png';
+import rock from '../../../../../assets/rock.svg';
+import paper from '../../../../../assets/paper.svg';
+import scissors from '../../../../../assets/scissors.svg';
 import boop from '../../../../../assets/pomoyka.mp3';
 
 import './Options.scss';

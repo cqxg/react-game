@@ -1,4 +1,4 @@
-import hand from '../../../../../assets/rock.png';
+import hand from '../../../../../assets/rock.svg';
 
 import './Hands.scss';
 
