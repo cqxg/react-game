@@ -23,7 +23,7 @@ const Statistics = ({ t }) => {
                   <td>{item.gamesCount}</td>
                   <td>{item.playerPoints}</td>
                   <td>{item.computerPoints}</td>
-                  <td>{item.winner}</td>
+                  <td>{t(item.winner)}</td>
                 </tr>
               );
             })}
