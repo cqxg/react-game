@@ -44,7 +44,7 @@ const Match = ({
       if (computerChoice === 'scissors') {
         setState({
           ...state,
-          winner: 'player',
+          winner: t('player'),
           gamesCount: state.gamesCount + 1,
           playerPoints: state.playerPoints + 1,
         });
@@ -52,7 +52,7 @@ const Match = ({
       } else if (computerChoice === 'paper') {
         setState({
           ...state,
-          winner: 'computer',
+          winner: t('computer'),
           gamesCount: state.gamesCount + 1,
           computerPoints: state.computerPoints + 1,
         });
@@ -60,7 +60,7 @@ const Match = ({
       } else if (computerChoice === 'rock') {
         setState({
           ...state,
-          winner: 'draw',
+          winner: t('draw'),
           gamesCount: state.gamesCount + 1,
         });
         winner.current.textContent = t('draw');
@@ -71,7 +71,7 @@ const Match = ({
       if (computerChoice === 'rock') {
         setState({
           ...state,
-          winner: 'computer',
+          winner: t('computer'),
           gamesCount: state.gamesCount + 1,
           computerPoints: state.computerPoints + 1,
         });
@@ -79,7 +79,7 @@ const Match = ({
       } else if (computerChoice === 'paper') {
         setState({
           ...state,
-          winner: 'player',
+          winner: t('player'),
           gamesCount: state.gamesCount + 1,
           playerPoints: state.playerPoints + 1,
         });
@@ -87,7 +87,7 @@ const Match = ({
       } else if (computerChoice === 'scissors') {
         setState({
           ...state,
-          winner: 'draw',
+          winner: t('draw'),
           gamesCount: state.gamesCount + 1,
         });
         winner.current.textContent = t('draw');
@@ -98,7 +98,7 @@ const Match = ({
       if (computerChoice === 'rock') {
         setState({
           ...state,
-          winner: 'player',
+          winner: t('player'),
           gamesCount: state.gamesCount + 1,
           playerPoints: state.playerPoints + 1,
         });
@@ -106,14 +106,14 @@ const Match = ({
       } else if (computerChoice === 'paper') {
         setState({
           ...state,
-          winner: 'draw',
+          winner: t('draw'),
           gamesCount: state.gamesCount + 1,
         });
         winner.current.textContent = t('draw');
       } else if (computerChoice === 'scissors') {
         setState({
           ...state,
-          winner: 'computer',
+          winner: t('computer'),
           gamesCount: state.gamesCount + 1,
           computerPoints: state.computerPoints + 1,
         });
