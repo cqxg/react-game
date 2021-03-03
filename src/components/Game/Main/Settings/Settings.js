@@ -20,7 +20,8 @@ const Volume = () => {
     volume: [100],
   });
 
-  useHotkeys('-', () => setState({ ...state, volume: [0] }));
+  useHotkeys('4', () => setState({ ...state, volume: [0] }));
+  useHotkeys('5', () => setState({ ...state, volume: [100] }));
 
   useEffect(() => {
     const e = state.volume[0];

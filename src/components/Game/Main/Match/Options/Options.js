@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import useSound from 'use-sound';
+import { useHotkeys } from 'react-hotkeys-hook';
 
 import rock from '../../../../../assets/rock.svg';
 import paper from '../../../../../assets/paper.svg';
@@ -68,6 +70,16 @@ const Options = ({
     playerHand.current.style.animation = 'shakePlayer 2s ease';
     computerHand.current.style.animation = 'shakeComputer 2s ease';
   };
+
+  useHotkeys('1', () => {
+    document.querySelector('.rock').click((e) => goPlay(e))
+  });
+  useHotkeys('2', (e) => {
+    document.querySelector('.scissors').click((e) => goPlay(e))
+  });
+  useHotkeys('3', (e) => {
+    document.querySelector('.paper').click((e) => goPlay(e))
+  });
 
   return (
     <div ref={optionsWrapper} className="options-wrapper">
