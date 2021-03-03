@@ -1,7 +1,7 @@
 .settings {
   top: 2%;
   left: 2%;
-  width: 245px;
+  width: 400px;
   display: flex;
   font-size: 20px;
   padding: 5px 25px;
@@ -20,8 +20,18 @@
     text-decoration: none;
   }
 
+  input {
+    cursor: pointer;
+    margin-top: 6px;
+  }
+
   img {
     height: 30px;
+  }
+
+  span {
+    white-space: nowrap;
+    margin: 10px;
   }
 
   &__language-container {

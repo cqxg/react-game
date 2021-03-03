@@ -16,5 +16,6 @@ export default {
     playercount: 'Your points in the current gaming session',
     computercount: 'Computer points in a gaming session',
     winner: 'Current game winner',
-    empty: 'Empty...'
+    empty: 'Empty...',
+    blactheme: 'night mode'
 }

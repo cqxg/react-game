@@ -17,7 +17,7 @@ const Volume = () => {
 
   const [state, setState] = useState({
     toggled: false,
-    volume: [0],
+    volume: [100],
   });
 
   useHotkeys('-', () => setState({ ...state, volume: [0] }));
@@ -102,58 +102,72 @@ const Volume = () => {
       {state.toggled ? (
         RenderRange()
       ) : (
-          <img width="30px" src={volume} alt="volume-icon" />
-        )}
+        <img width="30px" src={volume} alt="volume-icon" />
+      )}
       <audio loop ref={phoneMusic} src={backgroundMusic} />
     </div>
   );
 };
 
-const Settings = ({ location, t, i18n, activeLocale, changeLocale }) => {
-
+const Settings = ({
+  t,
+  i18n,
+  theme,
+  setTheme,
+  location,
+  activeLocale,
+  changeLocale,
+}) => {
   const setLanguage = (language) => {
     i18n.changeLanguage(language);
     changeLocale(language);
   };
 
   const RU = (
-    <span
+    <div
       className={
-        activeLocale === "ru"
-          ? "settings__language-container__ru active"
-          : "settings__language-container__ru"
+        activeLocale === 'ru'
+          ? 'settings__language-container__ru active'
+          : 'settings__language-container__ru'
       }
-      onClick={() => setLanguage("ru")}
+      onClick={() => setLanguage('ru')}
     >
       RU
-    </span>
+    </div>
   );
 
   const EN = (
-    <span
+    <div
       className={
-        activeLocale === "en"
-          ? "settings__language-container__en active"
-          : "settings__language-container__en"
+        activeLocale === 'en'
+          ? 'settings__language-container__en active'
+          : 'settings__language-container__en'
       }
-      onClick={() => setLanguage("en")}
+      onClick={() => setLanguage('en')}
     >
       EN
-    </span>
+    </div>
   );
 
-
   const locationName =
-    location.pathname === '/statistics' ?  t('ingame')  : t('statistics') ;
+    location.pathname === '/statistics' ? t('ingame') : t('statistics');
   const locationLink = location.pathname === '/statistics' ? '/' : 'statistics';
 
   return (
     <div className="settings">
       <Volume />
-      <Link to={locationLink}>{locationName}</Link>
-      <div className='settings__language-container'>
+      <Link to={locationLink}>
+        <span>{locationName}</span>
+      </Link>
+      <div className="settings__language-container">
         {EN} {RU}
       </div>
+      <span>{t('blactheme')}</span>
+      <input
+        type="checkbox"
+        checked={theme}
+        onChange={() => setTheme(!theme)}
+      />
     </div>
   );
 };
