@@ -5,7 +5,7 @@ const Game = ({ t }) => {
   return (
     <>
       <Main t={t} />
-      <Footer />
+      <Footer t={t} />
     </>
   );
 };

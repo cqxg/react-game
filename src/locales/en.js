@@ -17,5 +17,6 @@ export default {
     computercount: 'Computer points in a gaming session',
     winner: 'Current game winner',
     empty: 'Empty...',
-    blactheme: 'night mode'
+    blactheme: 'night mode',
+    hotkeys: 'Hotkeys (on main keyboard): 1 - Rock tool; 2 - Scissors tool; 3 - Paper tool; 4 - off music; 5 - on music'
 }
