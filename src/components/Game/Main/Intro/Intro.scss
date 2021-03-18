@@ -1,0 +1,50 @@
+.intro {
+  display: flex;
+  height: 400px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.1s ease 0.1s;
+
+  h1 {
+    margin-top: 70px;
+    width: 30%;
+    padding: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    font-family: fantasy;
+    letter-spacing: 3px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background-color: white;
+    box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  button {
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 2px solid black;
+    color: rgb(224, 224, 224);
+    background-color: rgb(45, 117, 96);
+
+    &:hover {
+      transition: 0.2s;
+      box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}

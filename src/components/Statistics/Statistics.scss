@@ -1,0 +1,33 @@
+.statistic {
+  width: 480px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: visible;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  overflow: auto;
+  & thead {
+    th {
+      padding: 15px;
+      color: #fff;
+      border: 1px solid #fff;
+      background-color: #2d7560;
+      text-shadow: 1px 1px 1px rgb(15, 15, 15);
+    }
+  }
+  & tbody {
+    & tr {
+      & td {
+        color: #333;
+        padding: 15px;
+        font-weight: 600;
+        border: 1px solid #fff;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+  }
+}

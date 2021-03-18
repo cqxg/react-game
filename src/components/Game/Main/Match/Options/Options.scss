@@ -1,0 +1,27 @@
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+
+  button {
+    margin: 5px;
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid black;
+    color: rgb(224, 224, 224);
+    background-color: rgb(45, 117, 96);
+
+    &:hover {
+      box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
